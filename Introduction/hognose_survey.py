@@ -2,9 +2,10 @@
 import csv
 from datetime import datetime
 
+
 # Create the "Hognose" class.
 class Hognose:
-# Define the attributes that make up the class.
+    # Define the attributes that make up the class.
     def __init__(self, name, age, snoot, goodness, good_eater, last_fed):
         self.name = name
         self.age = float(age)  # Convert age to a float number (to account for ages between 0 and 1).
@@ -13,8 +14,8 @@ class Hognose:
         self.good_eater = good_eater == 'True'  # Convert good_eater to a boolean.
         self.last_fed = datetime.strptime(last_fed, '%m/%d/%Y')  # Convert last_fed to a datetime object.
 
-# Define the "official" string that is the snake object.
-# The return string is broken up to stay maintain shorter lines per PEP 8
+    # Define the "official" string that is the snake object.
+    # The return string is broken up to stay maintain shorter lines per PEP 8
     def __repr__(self):
         return (f"Hognose(name='{self.name}', age={self.age}, snoot='{self.snoot}', "
                 f"goodness={self.goodness}, good_eater={self.good_eater}, "
@@ -42,6 +43,6 @@ with open('hognose_snakes.csv', 'r') as file:  # The 'r' stands for "read", as o
         snake = Hognose(**renamed_row)
         hognose_snakes.append(snake)
 
-# Print the list of Hognose objects.
+# Print the list of Hognose snake objects and their attributes.
 for snake in hognose_snakes:
     print(snake)
